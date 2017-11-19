@@ -1,1 +1,4 @@
 *.pyc
+*.asv
+pmtksupportCopy/
+pmtkTools/

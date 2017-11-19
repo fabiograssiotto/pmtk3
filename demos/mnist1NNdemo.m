@@ -30,6 +30,14 @@ if 0
   Xtest = sparse(Xtest);
 end
 
+% Randomize the ordering of the features to check if there 
+% is any difference in performance of the classifier.
+XtrainFeatSz = size(Xtrain, 2);
+XtestFeatSz = size(Xtest, 2);
+perm = randperm(XtrainFeatSz);
+Xtrain = Xtrain(:,perm);
+Xtest = Xtest(:,perm);
+
 ytrain = (mnist.train_labels(trainndx));
 ytest  = (mnist.test_labels(testndx));
 clear mnist trainndx testndx; % save space
